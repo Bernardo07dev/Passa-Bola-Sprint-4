@@ -5,7 +5,7 @@ const Login = () => {
     return(
         <Structure>
             {
-                <div className="w-full grid justify-items-center mx-4">
+                <div className="w-full grid justify-items-center mt-8">
                     <h1 className="text-xl mb-2">Faça seu login</h1>
                     <form className="w-full" action="">
                         <CampoTexto label="E-mail" placeholder="Digite seu E-mail" InputId="email"></CampoTexto>

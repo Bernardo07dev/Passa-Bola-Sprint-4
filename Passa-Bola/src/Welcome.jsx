@@ -16,7 +16,7 @@ const Welcome = () => {
           Se conecte, conheça jogadoras ou recrutadores conosco. Você quer criar uma conta de recrutador ou atleta?
         </p>
         <div className="grid gap-4 w-full mt-4 text-sm">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-lg transition-colors">Sou uma Jogadora</button>
+          <button onClick={() => navigate('/Fase1')} className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-lg transition-colors">Sou uma Jogadora</button>
           <button className="bg-gray-600 hover:bg-gray-700 text-white font-medium py-4 rounded-lg transition-colors">Sou um Recrutador</button>
         </div>
         <p className="text-gray-400 mt-4 text-sm">
