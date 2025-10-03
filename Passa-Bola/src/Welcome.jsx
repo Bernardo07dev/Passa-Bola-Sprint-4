@@ -12,8 +12,8 @@ const Welcome = () => {
       <div className="grid justify-items-center text-center gap-2">
         <img className="w-20" src={logo} alt="" />
         <h1 className="text-xl font-semibold text-white">Bem-vindo ao Passa Bola</h1>
-        <p className="text-gray-400 font-light text-sm">
-          Se conecte, conheça jogadoras ou recrutadores conosco. Você quer criar uma conta de recrutador ou atleta?
+        <p className="text-gray-400 font-light text-xs">
+          Se conecte, conheça jogadoras ou recrutadores conosco. Quer criar uma conta de recrutador ou atleta?
         </p>
         <div className="grid gap-4 w-full mt-4 text-sm">
           <button onClick={() => navigate('/Fase1')} className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-lg transition-colors">Sou uma Jogadora</button>

@@ -1,4 +1,7 @@
 .ativo{
-    background-color: rgba(0, 0, 0, 0.121);
-    border: 1px solid rgba(0, 0, 0, 0.256);
+    background-color: rgba(204, 204, 204, 0.855);
+    border: 1px solid rgba(183, 183, 183, 0.996);
+    color: rgba(0, 0, 0, 0.996);
+    font-weight: semi-bold;
+
 }
