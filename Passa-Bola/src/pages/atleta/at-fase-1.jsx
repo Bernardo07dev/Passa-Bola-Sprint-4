@@ -21,7 +21,7 @@ const Fase1 = () => {
    const aoSubmit = (evento) =>{
         evento.preventDefault();
         if(temOitoCaracteres && temMaiusculaInicial){
-            navigate("/atleta/fase-2");
+            navigate("Fase2");
         }
         else{
             document.getElementById("erro").classList.remove("hidden")
@@ -43,12 +43,12 @@ const Fase1 = () => {
                     <CampoTexto label="Senha" placeholder="Crie sua senha" type="password" valor={Senha} aoAlterado={valor => setSenha(valor)}></CampoTexto>
                     <p id="erro" className="duration-500 ease-in font-extralight text-[13px] text-red-300 hidden">A senha não tem os requisitos necessários</p>
                     <div className="flex flex-row items-center text-xs gap-2 mb-1">
-                        <FontAwesomeIcon className={`duration-300 ease-in  py-2 w-3 rounded-full ${temOitoCaracteres ? 'text-green-500' : 'text-red-500'}`} icon={iconeOitoCaracteres} />
+                        <FontAwesomeIcon className={`duration-300 ease-in  py-2 w-3 rounded-full ${temOitoCaracteres ? 'text-green-400' : 'text-red-400'}`} $ icon={iconeOitoCaracteres} />
                         <p>Mais de 8 caracteres</p>
                     </div>
                     <p id="erro" className="my-4 font-extralight text-[13px] text-red-300 text-center hidden">A senha não tem os requisitos necessários</p>
                     <div className="flex flex-row items-center text-xs gap-2 mb-4">   
-                        <FontAwesomeIcon className={`duration-500 ease-in w-3 rounded-full ${temMaiusculaInicial ? 'text-green-500' : 'text-red-500'}`} icon={iconeMaiusculaInicial} />
+                        <FontAwesomeIcon className={`duration-500 ease-in w-3 rounded-full ${temMaiusculaInicial ? 'text-green-400' : 'text-red-400'}`} icon={iconeMaiusculaInicial} />
                         <p>Primeira letra maiúscula</p>
                     </div>
                     <button className="w-full py-3 mt-2 bg-blue-500 text-white rounded-md font-medium flex items-center justify-center gap-2">Próxima etapa </button>
