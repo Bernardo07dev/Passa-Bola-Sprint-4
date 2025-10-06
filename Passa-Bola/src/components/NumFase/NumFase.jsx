@@ -6,13 +6,13 @@ const NumFase = ({passoAtual, Link1, Link2, Link3}) => {
 
     return (
         <div className="w-full flex justify-between items-center p-4 gap-2 cursor-pointer">
-            <div onClick={() => navigate(Link1)} className={`duration-500 ease-in bg-[#f3f4f625] px-4 py-2 rounded-full border-[#53535300] ${passoAtual >= 1 ? "ativo" : ""}`}>
+            <div onClick={() => {navigate(Link1)}} className={`duration-500 ease-in bg-[#f3f4f625] px-4 py-2 rounded-full border-[#53535300] ${passoAtual >= 1 ? "ativo" : ""}`}>
                 <p>1</p>
             </div>
 
             <div className="flex-grow h-[0.8px] bg-[#f3f4f6bc]"></div>
 
-            <div onClick={() => navigate(Link2)} className={`duration-500 ease-in cursor-pointer bg-[#8989891f] px-4 py-2 rounded-full border-[#53535300] ${passoAtual >= 2 ? "ativo" : ""}`}>
+            <div onClick={() => {navigate(Link2)}} className={`duration-500 ease-in cursor-pointer bg-[#8989891f] px-4 py-2 rounded-full border-[#53535300] ${passoAtual >= 2 ? "ativo" : ""}`}>
                 <p>2</p>
             </div>
 

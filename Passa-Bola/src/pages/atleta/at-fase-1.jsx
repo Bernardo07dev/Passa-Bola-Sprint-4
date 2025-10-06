@@ -12,8 +12,6 @@ const Fase1 = () => {
     const navigate = useNavigate()
     const [Senha, setSenha] = useState("")
     const [Nome, setNome] = useState("")
-    console.log(Nome)
-
     const temOitoCaracteres = Senha.length >= 8;
     const temMaiusculaInicial = Senha.length > 0 && Senha[0] === Senha[0].toUpperCase();
 
@@ -33,7 +31,7 @@ const Fase1 = () => {
     return(
         <Structure>
             <div className="w-full grid justify-items-center mt-12 pb-8">
-                <NumFase passoAtual={1} Link1="/Fase1" Link2="/atleta/fase-2" Link3="/atleta/fase-3" />
+                <NumFase passoAtual={1} Link1="/Fase1" Link2="/Fase2" Link3="/atleta/fase-3" />
                 <h1 className="text-lg mb-1 text-center">Etapa 1 de 3</h1>
                 <p className="text-gray-300 text-sm mb-6">Olá jogadora, preencha seus dados abaixo</p>
                 <form onSubmit={aoSubmit} className="font-light w-full flex gap-2 flex-col">
