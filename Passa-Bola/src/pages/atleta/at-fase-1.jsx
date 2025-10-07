@@ -34,7 +34,7 @@ const Fase1 = () => {
                 <NumFase passoAtual={1} Link1="/Fase1" Link2="/Fase2" Link3="/Fase3"/>
                 <h1 className="text-lg mb-1 text-center">Etapa 1 de 3</h1>
                 <p className="text-gray-300 text-sm mb-6">Olá jogadora, preencha seus dados abaixo</p>
-                <form onSubmit={aoSubmit} className="font-light w-full flex gap-2 flex-col">
+                <form onSubmit={aoSubmit} className="font-light w-full flex gap-2 flex-col text-sm">
                     <CampoTexto label="Nome" valor={Nome} aoAlterado={valor => setNome(valor)} placeholder="Digite seu nome"></CampoTexto>
                     <CampoTexto label="Data de nascimento" placeholder="Ex: 01/01/2000"></CampoTexto>
                     <CampoTexto label="Cidade" placeholder="Ex: São Paulo"></CampoTexto>

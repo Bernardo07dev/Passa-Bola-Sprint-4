@@ -20,7 +20,7 @@ const Fase2 = () => {
                 <NumFase passoAtual={2} Link1="/Fase1" Link2="/Fase2" Link3="/Fase3" />
                 <h1 className="text-lg mb-1 text-center">Etapa 2 de 3</h1>
                 <p className="text-gray-300 text-sm mb-6">Agora fale sobre você como jogadora</p>
-                <form onSubmit={(e) => {e.defaultPrevented; navigate("/Fase3"); }}>
+                <form className="text-sm" onSubmit={(e) => {e.defaultPrevented; navigate("/Fase3"); }}>
                     <CampoTexto label="Qual posição você joga?" placeholder="Ex: Atacante"></CampoTexto>
                     <CampoTexto label="Posição Secundária (Opicional)?" placeholder="Ex: Atacante"></CampoTexto>
                     <CampoCheckBox label="Já jogou em algum local?" label1="Sim" label2="Não" aoClicado={valor => setExperiencia(valor)}></CampoCheckBox>
