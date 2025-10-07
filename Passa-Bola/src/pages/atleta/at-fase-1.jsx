@@ -21,7 +21,7 @@ const Fase1 = () => {
    const aoSubmit = (evento) =>{
         evento.preventDefault();
         if(temOitoCaracteres && temMaiusculaInicial){
-            navigate("Fase2");
+            navigate("/Fase2");
         }
         else{
             document.getElementById("erro").classList.remove("hidden")
@@ -31,7 +31,7 @@ const Fase1 = () => {
     return(
         <Structure>
             <div className="w-full grid justify-items-center mt-12 pb-8">
-                <NumFase passoAtual={1} Link1="/Fase1" Link2="/Fase2" Link3="/atleta/fase-3" />
+                <NumFase passoAtual={1} Link1="/Fase1" Link2="/Fase2" Link3="/Fase3"/>
                 <h1 className="text-lg mb-1 text-center">Etapa 1 de 3</h1>
                 <p className="text-gray-300 text-sm mb-6">Olá jogadora, preencha seus dados abaixo</p>
                 <form onSubmit={aoSubmit} className="font-light w-full flex gap-2 flex-col">
