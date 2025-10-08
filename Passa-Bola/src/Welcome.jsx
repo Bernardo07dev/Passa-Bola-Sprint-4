@@ -17,7 +17,7 @@ const Welcome = () => {
         </p>
         <div className="grid gap-4 w-full mt-4 text-sm">
           <button onClick={() => navigate('/Fase1')} className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-lg transition-colors">Sou uma Jogadora</button>
-          <button className="bg-gray-600 hover:bg-gray-700 text-white font-medium py-4 rounded-lg transition-colors">Sou um Recrutador</button>
+          <button onClick={() => navigate('/RFase1')} className="bg-gray-600 hover:bg-gray-700 text-white font-medium py-4 rounded-lg transition-colors">Sou um Recrutador</button>
         </div>
         <p className="text-gray-400 mt-4 text-sm">
           Já tem uma conta? <u className='cursor-pointer text-blue-400 hover:text-blue-500' onClick={() => navigate('/login')}>Clique aqui e faça login</u>

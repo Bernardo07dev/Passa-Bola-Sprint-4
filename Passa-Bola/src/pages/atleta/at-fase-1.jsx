@@ -51,7 +51,7 @@ const Fase1 = () => {
                         <FontAwesomeIcon className={`duration-500 ease-in w-3 rounded-full ${temMaiusculaInicial ? 'text-green-400' : 'text-red-400'}`} icon={iconeMaiusculaInicial} />
                         <p>Primeira letra maiúscula</p>
                     </div>
-                    <button className="w-full py-3 mt-2 bg-blue-500 text-white rounded-md font-medium flex items-center justify-center gap-2">Próxima etapa </button>
+                    <button className="w-full py-3 mt-2 bg-blue-500 text-white rounded-md font-medium flex items-center justify-center gap-2">Próxima etapa</button>
                 </form>
             </div>
         </Structure>

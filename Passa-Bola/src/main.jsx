@@ -6,6 +6,8 @@ import Login from './pages/Login.jsx'
 import Fase1 from './pages/atleta/at-fase-1.jsx'
 import Fase2 from './pages/atleta/at-fase-2.jsx'
 import Fase3 from './pages/atleta/at-fase-3.jsx'
+import RFase1 from './pages/recrutador/rec-fase-1.jsx'
+import RFase2 from './pages/recrutador/rec-fase-2.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -14,6 +16,8 @@ const router = createBrowserRouter([
   {path: '/Fase1',element: <Fase1 />},
   {path: '/Fase2',element: <Fase2 />},
   {path: '/Fase3',element: <Fase3 />},
+  {path: '/RFase1',element: <RFase1 />},
+  {path: '/RFase2', element:<RFase2 />},
 ])
 
 createRoot(document.getElementById('root')).render(
