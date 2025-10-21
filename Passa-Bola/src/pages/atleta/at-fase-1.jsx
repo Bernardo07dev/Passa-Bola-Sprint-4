@@ -14,18 +14,12 @@ const Fase1 = () => {
     const [Nome, setNome] = useState("")
     const temOitoCaracteres = Senha.length >= 8;
     const temMaiusculaInicial = Senha.length > 0 && Senha[0] === Senha[0].toUpperCase();
-
     const iconeOitoCaracteres = temOitoCaracteres ? faCheck : faX;
     const iconeMaiusculaInicial = temMaiusculaInicial ? faCheck : faX;
 
-   const aoSubmit = (evento) =>{
+    const aoSubmit = (evento) =>{
         evento.preventDefault();
-        if(temOitoCaracteres && temMaiusculaInicial){
-            navigate("/Fase2");
-        }
-        else{
-            document.getElementById("erro").classList.remove("hidden")
-        }
+        navigate("/Fase2");
     }
 
     return(

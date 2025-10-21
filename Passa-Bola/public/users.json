@@ -1,0 +1,4 @@
+[
+  { "id": 1, "email": "recrutador@gmail.com", "password": "123456", "conta":"recrutador" },
+  { "id": 2, "email": "atleta@gmail.com", "password": "123456", "conta":"atleta" }
+]

@@ -40,7 +40,7 @@ const RFase1 = () =>{
     return(
         <Structure>
             <div className="w-full grid justify-items-center mt-12 pb-8">
-                <NumFase passoAtual={1} Link1="/Fase1" Link2="/Fase2" Link3="/Fase3"/>
+                <NumFase passoAtual={1} Link1="/RFase1" Link2="/RFase2" Link3="/RFase3"/>
                 <h1 className="text-lg mb-1 text-center">Etapa 1 de 3</h1>
                 <p className="text-gray-300 text-sm mb-6">Olá recrutador(a), preencha seus dados abaixo</p>
                 <form className="w-full" onSubmit={AoSubmit}>
@@ -51,11 +51,11 @@ const RFase1 = () =>{
                     {/* VERIFICAÇÕES DE SENHA */}
                     <div className="w-full flex flex-row items-center text-xs gap-2 mb-1 mt-2">
                         <FontAwesomeIcon className={`duration-300 ease-in  py-2 w-3 rounded-full ${temOitoCaracteres ? 'text-green-400' : 'text-red-400'}`} $ icon={iconeOitoCaracteres} />
-                        <p>Mais de 8 caracteres</p>
+                        <p className="text-gray-400">Mais de 8 caracteres</p>
                     </div>
                     <div className="w-full flex flex-row items-center text-xs gap-2 mb-4">   
                         <FontAwesomeIcon className={`duration-500 ease-in w-3 rounded-full ${temMaiusculaInicial ? 'text-green-400' : 'text-red-400'}`} icon={iconeMaiusculaInicial} />
-                        <p>Primeira letra maiúscula</p>
+                        <p className="text-gray-400">Primeira letra maiúscula</p>
                     </div>
                     <CampoTexto type="password" valor={Csenha} aoAlterado = {valor => SetCsenha(valor)} label="Confirme sua senha" placeholder="Digite sua senha novamente"></CampoTexto>
                     <p className={`transition-opacity duration-500 ease-in text-left font-extralight text-[13px] text-red-300 ${erro ? 'opacity-100' : 'opacity-0'}`}>{erro}</p>

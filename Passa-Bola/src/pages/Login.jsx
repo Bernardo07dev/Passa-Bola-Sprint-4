@@ -3,6 +3,7 @@ import Structure from "../components/Structure";
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 import logo from "./../assets/img/logo.svg"
+import { use } from "react";
 
 
 const Login = () => {  
@@ -11,23 +12,25 @@ const Login = () => {
 
     const navigate = useNavigate()
 
-    const EmailAt = "atleta@gmail.com"
-    const SenhaAt = "123456"
+    const [Login, setLogin] = useState(false)
 
-    const EmailRec = "recrutador@gmail.com"
-    const SenhaRec = "123456"
 
-    const aoSubmit = (evento) =>{
-        if (Email == EmailAt && Senha == SenhaAt){
-            navigate()
-        }
-        else if(Email == EmailRec && Senha == SenhaRec){
-            navigate()
-        }
-        else{
-            document.getElementById("erro").classList.remove("hidden")
-        }
+    const aoSubmit = async (evento) =>{
         evento.preventDefault()
+        try{
+            evento.preventDefault();
+            const res = await fetch("/users.json");
+            const users = await res.json();
+            const user = users.find(u => u.email === Email && u.password === Senha);
+            if (user){
+                navigate(`/${user.conta}-home`)
+            } else{
+                setLogin(true)
+            }
+        } catch(error){
+            alert("Erro ao fazer login")
+        }
+
     }
 
     return(
@@ -40,7 +43,7 @@ const Login = () => {
                     <form onSubmit={aoSubmit} className="w-full" action="">
                         <CampoTexto label="E-mail" placeholder="Digite seu E-mail" valor={Email} aoAlterado={valor => setEmail(valor)}></CampoTexto>
                         <CampoTexto label="Senha" placeholder="Digite sua Senha" type="password" valor={Senha} aoAlterado={valor => setSenha(valor)}></CampoTexto>
-                        <p id="erro" className="my-4 font-extralight text-[13px] text-red-300 text-center hidden">Email ou Senha incorretos (Logins disponíveis no READ.ME do projeto)</p>
+                        <p id="erro" className={`my-4 font-extralight text-[13px] text-red-300 text-center transition-opacity duration-300 ease-in ${Login ? 'opacity-100 block' : 'opacity-0 hidden'}`}>Email ou Senha incorretos (Logins disponíveis no READ.ME do projeto)</p>
                         <button className="w-full py-2.5 mt-2 bg-blue-500 text-white rounded-lg font-semibold">Entrar</button>
                         <p className="mt-4 text-sm text-gray-300 text-center">Não tem uma conta? <a href="/" className="text-blue-500">Cadastre-se</a></p>
                     </form>
