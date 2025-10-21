@@ -23,7 +23,7 @@ const Login = () => {
             const users = await res.json();
             const user = users.find(u => u.email === Email && u.password === Senha);
             if (user){
-                navigate(`/${user.conta}-home`)
+                navigate(`/${user.conta}Home`)
             } else{
                 setLogin(true)
             }

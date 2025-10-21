@@ -9,6 +9,8 @@ import Fase3 from './pages/atleta/at-fase-3.jsx'
 import RFase1 from './pages/recrutador/rec-fase-1.jsx'
 import RFase2 from './pages/recrutador/rec-fase-2.jsx'
 import Rfase3 from './pages/recrutador/rec-fase-3.jsx'
+import AtletaHome from './pages/atleta/AtletaHome.jsx'
+import RecrutadorHome from './pages/recrutador/RecrutadorHome.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -19,7 +21,9 @@ const router = createBrowserRouter([
   {path: '/Fase3',element: <Fase3 />},
   {path: '/RFase1',element: <RFase1 />},
   {path: '/RFase2', element:<RFase2 />},
-  {path: '/RFase3', element:<Rfase3 />}
+  {path: '/RFase3', element:<Rfase3 />},
+  {path: '/AtletaHome', element:<AtletaHome />},
+  {path: '/RecrutadorHome', element:<RecrutadorHome />}
 ])
 
 createRoot(document.getElementById('root')).render(
