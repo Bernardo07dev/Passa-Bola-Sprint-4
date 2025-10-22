@@ -35,7 +35,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Backend (se estiver dentro do projeto)
+# Backend 
 server/node_modules/
 server/.env
 server/dist/

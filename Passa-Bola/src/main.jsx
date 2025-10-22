@@ -10,6 +10,7 @@ import RFase1 from './pages/recrutador/rec-fase-1.jsx'
 import RFase2 from './pages/recrutador/rec-fase-2.jsx'
 import Rfase3 from './pages/recrutador/rec-fase-3.jsx'
 import AtletaHome from './pages/atleta/AtletaHome.jsx'
+import LolaAi from './pages/atleta/LolaAi.jsx'
 import RecrutadorHome from './pages/recrutador/RecrutadorHome.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
   {path: '/RFase2', element:<RFase2 />},
   {path: '/RFase3', element:<Rfase3 />},
   {path: '/AtletaHome', element:<AtletaHome />},
+  {path: '/LolaAi', element:<LolaAi/>},
   {path: '/RecrutadorHome', element:<RecrutadorHome />}
 ])
 
