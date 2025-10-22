@@ -38,7 +38,7 @@ const LolaAi = () => {
 
   return (
     <StructurePages>
-      <header className='text-center pt-12 pb-12 sticky top-0 bg-[#121212] z-10'>
+      <header className='text-center pt-12 pb-12 sticky top-0 bg-[#111418] z-10'>
         <h1 className='text-4xl font-bold bg-gradient-to-r from-[#FFF] via-[#346de9] to-[#2563EB] bg-clip-text text-transparent'>Lola Ai</h1>
         <p className='text-sm font-light text-gray-300 mt-2'>Pergunta e Converse com a Lola</p>
       </header>

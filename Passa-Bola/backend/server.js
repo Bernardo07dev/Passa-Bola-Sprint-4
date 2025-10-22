@@ -9,23 +9,14 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Initialize with API key
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Backend do Assistente Virtual está rodando! 🚀' });
-});
+// Get the generative model
+const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
 
-app.post('/api/chat', async (req, res) => {
-  try {
-    const { message } = req.body;
-
-    if (!message) {
-      return res.status(400).json({ error: 'Mensagem é obrigatória' });
-    }
-
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-
-    const systemPrompt = `
+// Define the system instruction for Lola
+const lolaSystemInstruction = `
 Você é **Lola**, uma assistente virtual inteligente e empática criada para apoiar jovens atletas em sua jornada esportiva. 
 Seu papel é motivar, orientar e inspirar de forma gentil, confiante e com linguagem feminina e natural.
 
@@ -50,13 +41,37 @@ Se o usuário fizer perguntas fora desse contexto, Lola deve responder educadame
 
 🎯 **Objetivo:**
 Ajudar o usuário a se sentir motivado, compreendido e guiado com segurança em sua jornada esportiva — seja física ou mentalmente.
-
----
-
-Mensagem do usuário: ${message}
 `;
 
-    const result = await model.generateContent(systemPrompt);
+app.get('/', (req, res) => {
+  res.json({ message: 'Backend do Assistente Virtual está rodando! 🚀' });
+});
+
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message } = req.body;
+
+    if (!message) {
+      return res.status(400).json({ error: 'Mensagem é obrigatória' });
+    }
+
+    // Send the user's message along with the system instruction
+    const chat = model.startChat({
+        history: [
+            {
+                role: "user",
+                parts: [{ text: lolaSystemInstruction }],
+            },
+            {
+                role: "model",
+                parts: [{ text: "Compreendido! Estou pronta para te ajudar. Como posso te auxiliar na sua jornada esportiva hoje? 💛" }],
+            }
+        ],
+        // You can add generation config here if needed, e.g., temperature, topP, topK
+        // generationConfig: { maxOutputTokens: 200 },
+    });
+
+    const result = await chat.sendMessage(message);
     const response = await result.response;
     const text = response.text();
 
@@ -67,6 +82,10 @@ Mensagem do usuário: ${message}
 
   } catch (error) {
     console.error('Erro ao processar mensagem:', error);
+    // Log the full error to see more details
+    if (error.response) {
+        console.error('Gemini API Error details:', error.response.candidates);
+    }
     res.status(500).json({ 
       error: 'Erro ao processar sua mensagem. Tente novamente.',
       success: false 
