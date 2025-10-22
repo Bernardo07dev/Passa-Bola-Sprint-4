@@ -1,4 +1,5 @@
-import StructurePages from "../../components/StructurePages"; 
+import StructurePages from "../../components/StructurePages";
+import Footer from "../../components/footer";
 import treinadora from "../../assets/img/treinadora.png";
 import ohio from "../../assets/img/ohio.png";
 import cor from "../../assets/img/cor.jpg";
@@ -126,6 +127,8 @@ const AtletaHome = () => {
                     </div>
                 </section>
             </main>
+
+            <Footer estado="home"></Footer>
         </StructurePages>
     )
 }
