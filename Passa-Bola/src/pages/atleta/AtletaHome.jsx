@@ -35,13 +35,13 @@ const AtletaHome = () => {
         <StructurePages>
             <header className="flex flex-row justify-between items-center px-10 pt-12 mb-12">
                 <img className="w-[10%]" src={treinadora}></img>
-                <h1 className="text-[1em]">Home</h1>
-                <FontAwesomeIcon icon={faBell} className="text-xl"></FontAwesomeIcon>
+                {/* <h1 className="text-[1em]">Home</h1> */}
+                <FontAwesomeIcon icon={faBell} className="text-xl text-gray-300"></FontAwesomeIcon>
             </header>
 
             <main className="flex flex-col gap-8 w-full">
                 <section className="px-10">
-                    <h1 className="text-lg mb-4">Eventos</h1>
+                    <h1 className="text-xl mb-4">Eventos</h1>
                     <div className="flex flex-row w-full justify-between gap-4">
                         <div className="cursor-pointer">
                             <img className="w-[170px] h-[120px] rounded-xl mb-2" src={ohio}></img>
@@ -57,19 +57,19 @@ const AtletaHome = () => {
                 </section>
 
                 <section className="px-10">
-                    <h1 className="text-lg mb-4">Status Recentes</h1>
+                    <h1 className="text-xl mb-4">Status Recentes</h1>
                     <div className="w-full flex flex-row gap-4">
                         <div className="w-[50%] p-4 border border-gray-700 rounded-xl">
-                            <h1 className="text-base">Gols</h1>
+                            <h1 className="text-sm">Gols</h1>
                             <p className="text-2xl font-semibold">1</p>
                         </div>
                         <div className="w-[50%] p-4 border border-gray-700 rounded-xl">
-                            <h1 className="text-base">Assistencias</h1>
+                            <h1 className="text-sm">Assistencias</h1>
                             <p className="text-2xl font-semibold">2</p>
                         </div>
                     </div>
                     <div className="w-full mt-4 p-4 border border-gray-700 rounded-xl">
-                        <h1 className="text-base">Minutos Jogados</h1>
+                        <h1 className="text-sm">Minutos Jogados</h1>
                         <p className="text-2xl font-semibold">82</p>
                     </div>
                 </section>
@@ -101,7 +101,7 @@ const AtletaHome = () => {
                     </div>
                 </section>
 
-                <section>
+                <section className="">
                     <div className="flex flex-row gap-4 px-10">
                         <img className="w-[15%] rounded-full" src={luiza}></img>
                         <div className="flex flex-col">
