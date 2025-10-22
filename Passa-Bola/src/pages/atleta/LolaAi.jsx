@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import StructurePages from "../../components/StructurePages";
 import Footer from "../../components/footer";
 
@@ -38,23 +38,32 @@ const LolaAi = () => {
 
   return (
     <StructurePages>
-      {/* Seu header aqui */}
+      <header className='text-center pt-12 pb-12 sticky top-0 bg-[#121212] z-10'>
+        <h1 className='text-4xl font-bold bg-gradient-to-r from-[#FFF] via-[#346de9] to-[#2563EB] bg-clip-text text-transparent'>Lola Ai</h1>
+        <p className='text-sm font-light text-gray-300 mt-2'>Pergunta e Converse com a Lola</p>
+      </header>
       
-      <main className="px-10">
-        {/* Lista de mensagens */}
+      <main className="flex flex-col px-16 text-white w-full max-w-[500px] mx-auto h-[calc(100vh-300px)] mb-12 overflow-y-auto scrollbar-hide">
         {messages.map((msg, idx) => (
-          <div key={idx}>
-            <p>{msg.content}</p>
+          <div
+            key={idx}
+            className={`my-2 p-3 rounded-lg max-w-[80%] ${
+              msg.role === 'user'
+                ? 'bg-blue-600 text-white self-end rounded-br-none'
+                : 'bg-[#303030] text-gray-200 self-start rounded-bl-none'
+            }`}
+          >
+            <p className="text-sm leading-relaxed">{msg.content}</p>
           </div>
         ))}
 
-        {/* Input */}
-        <input 
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Digite..."
-        />
-        <button onClick={handleSubmit}>Enviar</button>
+        <div className='w-[420px] flex flex-row justify-center gap-2 fixed bottom-[100px] left-[555px]'>
+          <input 
+            value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => {if (e.key === "Enter") {handleSubmit();}}} className='w-[80%] px-4 text-sm bg-[#303030] rounded-full focus:outline-none' placeholder="Pergunte para Lola..."/>
+          <button className='w-[13%] align-middle bg-gradient-to-r from-[#7685fa] via-[#346de9] to-[#2563EB] py-4 rounded-full' onClick={handleSubmit}>
+            <FontAwesomeIcon icon={faArrowRight} className="text-xl text-white text-center align-middle"></FontAwesomeIcon>
+          </button>
+        </div>
       </main>
 
       <Footer estado="lola" />
