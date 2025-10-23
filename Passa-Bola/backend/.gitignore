@@ -30,7 +30,7 @@ dist/
 build/
 ```
 
-## ⚠️ O **MAIS IMPORTANTE** é:
+
 ```
 node_modules/
 .env

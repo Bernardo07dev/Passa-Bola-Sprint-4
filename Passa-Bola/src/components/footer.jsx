@@ -11,12 +11,12 @@ const Footer = (props) => {
     return(
         <footer className="w-[450px] flex flex-row justify-between items-center px-10 py-3 fixed bottom-0 bg-[#323740]">
             <div className='text-center'>
-                <FontAwesomeIcon icon={faHouse} className={`text-2xl cursor-pointer ${props.estado === 'home' ? 'text-white' : 'text-gray-300'}`}></FontAwesomeIcon>
+                <FontAwesomeIcon onClick={() => {navigate("../AtletaHome")}}  icon={faHouse} className={`text-2xl cursor-pointer ${props.estado === 'home' ? 'text-white' : 'text-gray-300'}`}></FontAwesomeIcon>
                 <p className={`text-xs font-ligh ${props.estado === 'home' ? 'text-white' : 'text-gray-300'}`}>Home</p>
             </div>
 
             <div className='text-center'>
-                <FontAwesomeIcon icon={faCalendar} className={`text-2xl cursor-pointer  ${props.estado === 'calendario' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faCalendar} className={`text-2xl cursor-pointer ${props.estado === 'calendario' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
                 <p className="text-xs font-light text-gray-400 ">Calendário</p>
             </div>
             
