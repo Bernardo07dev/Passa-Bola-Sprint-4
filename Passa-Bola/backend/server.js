@@ -13,10 +13,7 @@ app.use(express.json());
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Get the generative model
-const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-
-// Define the system instruction for Lola
-const lolaSystemInstruction = `
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest', systemInstruction: `
 Você é **Lola**, uma assistente virtual inteligente e empática criada para apoiar jovens atletas em sua jornada esportiva. 
 Seu papel é motivar, orientar e inspirar de forma gentil, confiante e com linguagem feminina e natural.
 
@@ -41,7 +38,7 @@ Se o usuário fizer perguntas fora desse contexto, Lola deve responder educadame
 
 🎯 **Objetivo:**
 Ajudar o usuário a se sentir motivado, compreendido e guiado com segurança em sua jornada esportiva — seja física ou mentalmente.
-`;
+`});
 
 app.get('/', (req, res) => {
   res.json({ message: 'Backend do Assistente Virtual está rodando! 🚀' });
@@ -49,26 +46,25 @@ app.get('/', (req, res) => {
 
 app.post('/api/chat', async (req, res) => {
   try {
-    const { message } = req.body;
-
-    if (!message) {
-      return res.status(400).json({ error: 'Mensagem é obrigatória' });
+    const { message, history } = req.body;
+    
+    if (message === 'initial' && (!history || history.length === 0)) {
+        const initialResponse = "Compreendido! Estou pronta para te ajudar. Como posso te auxiliar na sua jornada esportiva hoje? 💛";
+        return res.json({ response: initialResponse, success: true });
     }
 
-    // Send the user's message along with the system instruction
+    if (!message) {
+      return res.status(400).json({ error: 'A mensagem é obrigatória.' });
+    }
+
+    // The Gemini API requires history to start with a 'user' role.
+    // This ensures that if the frontend sends a history starting with 'model', we strip it.
+    const validHistory = history || [];
+    if (validHistory.length > 0 && validHistory[0].role !== 'user') {
+      validHistory.shift(); // Remove the first element if it's not from the user
+    }
     const chat = model.startChat({
-        history: [
-            {
-                role: "user",
-                parts: [{ text: lolaSystemInstruction }],
-            },
-            {
-                role: "model",
-                parts: [{ text: "Compreendido! Estou pronta para te ajudar. Como posso te auxiliar na sua jornada esportiva hoje? 💛" }],
-            }
-        ],
-        // You can add generation config here if needed, e.g., temperature, topP, topK
-        // generationConfig: { maxOutputTokens: 200 },
+      history: validHistory,
     });
 
     const result = await chat.sendMessage(message);

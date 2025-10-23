@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import StructurePages from "../../components/StructurePages";
@@ -8,27 +8,61 @@ const LolaAi = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const chatEndRef = useRef(null);
+
+  // Scroll to the bottom of the chat on new messages
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  // Fetch the initial greeting from Lola
+  useEffect(() => {
+    const getInitialMessage = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch('http://localhost:3001/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'initial', history: [] }),
+        });
+        const data = await response.json();
+        if (data.success) {
+          setMessages([{ role: 'model', content: data.response }]);
+        }
+      } catch (error) {
+        console.error('Erro ao buscar mensagem inicial:', error);
+        setMessages([{ role: 'model', content: 'Olá! Não consegui me conectar. Tente recarregar a página. 😕' }]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getInitialMessage();
+  }, []);
 
   const handleSubmit = async () => {
     if (!input.trim()) return;
 
-    // Adiciona mensagem do usuário
-    setMessages([...messages, { role: 'user', content: input }]);
+    const currentInput = input;
+    const userMessage = { role: 'user', content: currentInput };
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
+
     setInput('');
     setLoading(true);
 
+    // The history sent to the API should be the conversation that has already occurred.
+    const historyForApi = messages.map(msg => ({ role: msg.role, parts: [{ text: msg.content }] }));
+
     try {
-      // Chama o backend
       const response = await fetch('http://localhost:3001/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input })
+        body: JSON.stringify({ message: currentInput, history: historyForApi })
       });
 
       const data = await response.json();
       
-      // Adiciona resposta da Lola
-      setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
+      setMessages(prev => [...prev, { role: 'model', content: data.response }]);
     } catch (error) {
       console.error('Erro:', error);
     } finally {
@@ -56,6 +90,7 @@ const LolaAi = () => {
             <p className="text-sm leading-relaxed">{msg.content}</p>
           </div>
         ))}
+        <div ref={chatEndRef} />
 
         <div className='w-[420px] flex flex-row justify-center gap-2 fixed bottom-[100px] left-[555px]'>
           <input 
