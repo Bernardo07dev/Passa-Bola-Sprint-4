@@ -109,7 +109,7 @@ const LolaAi = () => {
         </button>
       </div>
 
-      <Footer estado="lola" />
+      <Footer estado="lola"></Footer>
     </StructurePages>
   );
 };
