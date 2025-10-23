@@ -34,29 +34,28 @@ const AtletaHome = () => {
     return(
         <StructurePages>
             <header className="flex flex-row justify-between items-center px-10 pt-12 mb-12">
-                <img className="w-[10%]" src={treinadora}></img>
-                {/* <h1 className="text-[1em]">Home</h1> */}
-                <FontAwesomeIcon icon={faBell} className="text-xl text-gray-300"></FontAwesomeIcon>
+                <img className="w-[11.5%]" src={treinadora}></img>
+                <FontAwesomeIcon icon={faBell} className="text-2xl text-gray-300"></FontAwesomeIcon>
             </header>
 
             <main className="flex flex-col gap-8 w-full">
-                <section className="px-10">
+                <section className="px-8">
                     <h1 className="text-xl mb-4">Eventos</h1>
                     <div className="flex flex-row w-full justify-between gap-4">
                         <div className="cursor-pointer">
-                            <img className="w-[170px] h-[120px] rounded-xl mb-2" src={ohio}></img>
+                            <img className="w-[190px] h-[120px] rounded-xl mb-2" src={ohio}></img>
                             <p className="text-sm">Entrevista Ohio Unversity</p>
                             <p className="text-gray-500 text-sm">11:10 - 04/08/2025</p>
                         </div>
                         <div className="cursor-pointer">
-                            <img className="w-[170px] h-[120px] rounded-xl mb-2" src={cor}></img>
+                            <img className="w-[190px] h-[120px] rounded-xl mb-2" src={cor}></img>
                             <p className="text-sm">Peneira Corinthians</p>
                             <p className="text-gray-500 text-sm">14:45 - 25/09/2025</p>
                         </div>
                     </div>
                 </section>
 
-                <section className="px-10">
+                <section className="px-8">
                     <h1 className="text-xl mb-4">Status Recentes</h1>
                     <div className="w-full flex flex-row gap-4">
                         <div className="w-[50%] p-4 border border-gray-700 rounded-xl">
@@ -75,15 +74,15 @@ const AtletaHome = () => {
                 </section>
 
                 <section>
-                    <h1 className="text-lg mb-4 px-10">Seu Feed</h1>
-                    <div className="flex flex-row gap-4 px-10">
-                        <img className="w-[15%] rounded-full" src={player}></img>
+                    <h1 className="text-lg mb-4 px-8">Seu Feed</h1>
+                    <div className="flex flex-row gap-4 px-8">
+                        <img className="w-[13%] rounded-full" src={player}></img>
                         <div className="flex flex-col">
                             <h1 className="text-base">Sofia Bastos</h1>
                             <p className="text-sm text-gray-500">2d</p>
                         </div>
                     </div>
-                    <p className="font-light text-sm mt-4 px-10 mb-4">Mais uma vitória para o time, obrigado #OhioUneversity pela oportunidade!!</p>
+                    <p className="font-light text-sm mt-4 px-8 mb-4">Mais uma vitória para o time, obrigado #OhioUneversity pela oportunidade!!</p>
                     <img src={post1} className="w-full h-[300px] object-cover"></img>
                     <div className="flex flex-row justify-start gap-4 px-10 py-6">
                         <div className="flex flex-row items-center gap-1">

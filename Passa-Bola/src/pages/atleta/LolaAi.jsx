@@ -22,29 +22,6 @@ const LolaAi = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  useEffect(() => {
-    const getInitialMessage = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(`${API_URL}/api/chat`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: 'Olá!' }),
-        });
-        const data = await response.json();
-        if (data.success) {
-          setMessages([{ role: 'assistant', content: data.response }]);
-        }
-      } catch (error) {
-        console.error('Erro ao buscar mensagem inicial:', error);
-        setMessages([{ role: 'assistant', content: 'Olá! 👋 Sou a Lola, sua assistente virtual. Estou aqui para te apoiar em sua jornada esportiva! Como posso te ajudar hoje?' }]);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getInitialMessage();
-  }, []);
-
   const handleSubmit = async () => {
     if (!input.trim() || loading) return;
 
@@ -52,6 +29,7 @@ const LolaAi = () => {
     setInput('');
     
     setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+    setMessages(prev => [...prev, { role: 'assistant', content: '' }]);
     setLoading(true);
 
     try {
@@ -63,10 +41,10 @@ const LolaAi = () => {
 
       const data = await response.json();
       
-      setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
+      setMessages(prev => [...prev.slice(0, -1), { role: 'assistant', content: data.response }]);
     } catch (error) {
       console.error('Erro:', error);
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Desculpe, ocorreu um erro. Tente novamente. 😕' }]);
+      setMessages(prev => [...prev.slice(0, -1)]);
     } finally {
       setLoading(false);
     }
@@ -89,14 +67,9 @@ const LolaAi = () => {
                   : 'bg-[#303030] text-gray-200 self-start rounded-bl-none'
               }`}
             >
-              <p className="text-sm leading-relaxed">{msg.content}</p>
+              <p className="text-sm leading-relaxed">{msg.content || '...'}</p>
             </div>
           ))}
-          {loading && (
-            <div className="bg-[#303030] text-gray-200 self-start rounded-bl-none my-2 p-4 rounded-lg max-w-[80%]">
-              <p className="text-sm">Lola está digitando...</p>
-            </div>
-          )}
           <div ref={chatEndRef} />
       </main>
 
@@ -107,12 +80,10 @@ const LolaAi = () => {
           onKeyDown={(e) => {if (e.key === "Enter") {handleSubmit();}}} 
           className='w-[80%] px-4 text-sm bg-[#303030] rounded-full focus:outline-none' 
           placeholder="Pergunte para Lola..."
-          disabled={loading}
         />
         <button 
-          className='w-[13%] align-middle bg-gradient-to-r from-[#7685fa] via-[#346de9] to-[#2563EB] py-4 rounded-full disabled:opacity-50' 
+          className='w-[13%] align-middle bg-gradient-to-r from-[#7685fa] via-[#346de9] to-[#2563EB] py-4 rounded-full' 
           onClick={handleSubmit}
-          disabled={loading}
         >
           <FontAwesomeIcon icon={faArrowRight} className="text-xl text-white text-center align-middle"></FontAwesomeIcon>
         </button>
