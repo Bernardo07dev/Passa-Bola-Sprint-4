@@ -4,6 +4,8 @@ import { faPaperPlane, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import StructurePages from "../../components/StructurePages";
 import Footer from "../../components/footer";
 
+const API_URL = 'https://passa-bola-sprint-4.onrender.com';
+
 const LolaAi = () => {
   const [messages, setMessages] = useState([
     {
@@ -11,14 +13,6 @@ const LolaAi = () => {
       content: 'Olá! 👋 Sou a Lola, sua assistente virtual. Estou aqui para te apoiar em sua jornada esportiva! Como posso te ajudar hoje?'
     }
   ]);
-
-  useEffect(() => {
-  fetch('http://localhost:3001/api/greeting')
-    .then(res => res.json())
-    .then(data => {
-          setMessages([{ role: 'assistant', content: data.message }]);
-        });
-    }, []);
 
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -32,18 +26,18 @@ const LolaAi = () => {
     const getInitialMessage = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:3001/api/chat', {
+        const response = await fetch(`${API_URL}/api/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: 'initial', history: [] }),
+          body: JSON.stringify({ message: 'Olá!' }),
         });
         const data = await response.json();
         if (data.success) {
-          setMessages([{ role: 'model', content: data.response }]);
+          setMessages([{ role: 'assistant', content: data.response }]);
         }
       } catch (error) {
         console.error('Erro ao buscar mensagem inicial:', error);
-        setMessages([{ role: 'model', content: 'Olá! Não consegui me conectar. Tente recarregar a página. 😕' }]);
+        setMessages([{ role: 'assistant', content: 'Olá! 👋 Sou a Lola, sua assistente virtual. Estou aqui para te apoiar em sua jornada esportiva! Como posso te ajudar hoje?' }]);
       } finally {
         setLoading(false);
       }
@@ -52,31 +46,31 @@ const LolaAi = () => {
   }, []);
 
   const handleSubmit = async () => {
-  if (!input.trim() || loading) return;
+    if (!input.trim() || loading) return;
 
-  const userMessage = input.trim();
-  setInput('');
-  
-  setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
-  setLoading(true);
-
-  try {
-    const response = await fetch('http://localhost:3001/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: userMessage })
-    });
-
-    const data = await response.json();
+    const userMessage = input.trim();
+    setInput('');
     
-    // ✅ CORRETO: role: 'assistant'
-    setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
-  } catch (error) {
-    console.error('Erro:', error);
-  } finally {
-    setLoading(false);
-  }
-};
+    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${API_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage })
+      });
+
+      const data = await response.json();
+      
+      setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
+    } catch (error) {
+      console.error('Erro:', error);
+      setMessages(prev => [...prev, { role: 'assistant', content: 'Desculpe, ocorreu um erro. Tente novamente. 😕' }]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <StructurePages>
@@ -98,13 +92,28 @@ const LolaAi = () => {
               <p className="text-sm leading-relaxed">{msg.content}</p>
             </div>
           ))}
+          {loading && (
+            <div className="bg-[#303030] text-gray-200 self-start rounded-bl-none my-2 p-4 rounded-lg max-w-[80%]">
+              <p className="text-sm">Lola está digitando...</p>
+            </div>
+          )}
           <div ref={chatEndRef} />
       </main>
 
       <div className='mt-12 w-full max-w-[420px] flex flex-row justify-center gap-2 fixed bottom-[100px] left-1/2 -translate-x-1/2 px-4'>
         <input 
-          value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => {if (e.key === "Enter") {handleSubmit();}}} className='w-[80%] px-4 text-sm bg-[#303030] rounded-full focus:outline-none' placeholder="Pergunte para Lola..."/>
-        <button className='w-[13%] align-middle bg-gradient-to-r from-[#7685fa] via-[#346de9] to-[#2563EB] py-4 rounded-full' onClick={handleSubmit}>
+          value={input} 
+          onChange={(e) => setInput(e.target.value)} 
+          onKeyDown={(e) => {if (e.key === "Enter") {handleSubmit();}}} 
+          className='w-[80%] px-4 text-sm bg-[#303030] rounded-full focus:outline-none' 
+          placeholder="Pergunte para Lola..."
+          disabled={loading}
+        />
+        <button 
+          className='w-[13%] align-middle bg-gradient-to-r from-[#7685fa] via-[#346de9] to-[#2563EB] py-4 rounded-full disabled:opacity-50' 
+          onClick={handleSubmit}
+          disabled={loading}
+        >
           <FontAwesomeIcon icon={faArrowRight} className="text-xl text-white text-center align-middle"></FontAwesomeIcon>
         </button>
       </div>
