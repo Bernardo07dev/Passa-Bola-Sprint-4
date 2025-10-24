@@ -40,7 +40,7 @@ const AtletaHome = () => {
 
             <main className="flex flex-col gap-8 w-full">
                 <section className="px-8">
-                    <h1 className="text-xl mb-4">Eventos</h1>
+                    <h1 className="text-xl font-semibold mb-4">Eventos</h1>
                     <div className="flex flex-row w-full justify-between gap-4">
                         <div className="cursor-pointer">
                             <img className="w-[190px] h-[120px] rounded-xl mb-2" src={ohio}></img>
