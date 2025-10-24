@@ -1,0 +1,11 @@
+[
+  { "dia": 5, "horário":"14:45", "evento": "Peneira Corinthians Sub-19", "descrição":"Dia 2 de novembro terei uma peneira no Corithians SportLCube"},
+  { "dia": 8, "horário": "09:30", "evento": "Peneira Santos FC Sub-17", "descrição": "Avaliação técnica no CT Meninos da Vila" },
+  { "dia": 12, "horário": "16:00", "evento": "Peneira São Paulo FC Sub-20", "descrição": "Treino de observação no CFA Cotia" },
+  { "dia": 14, "horário": "10:15", "evento": "Peneira Palmeiras Sub-15", "descrição": "Avaliação de base na Academia de Futebol" },
+  { "dia": 18, "horário": "13:00", "evento": "Peneira Flamengo Sub-17", "descrição": "Etapa regional de observação técnica" },
+  { "dia": 21, "horário": "15:45", "evento": "Peneira Fluminense Sub-20", "descrição": "Treino avaliativo nas Laranjeiras" },
+  { "dia": 25, "horário": "08:30", "evento": "Peneira Grêmio Sub-19", "descrição": "Avaliação com comissão técnica da base" },
+  { "dia": 27, "horário": "17:10", "evento": "Peneira Athletico Paranaense Sub-17", "descrição": "Etapa final de seleção de talentos" },
+  { "dia": 29, "horário": "11:45", "evento": "Peneira Cruzeiro Sub-20", "descrição": "Treino observacional com olheiros da Toca da Raposa" }
+]

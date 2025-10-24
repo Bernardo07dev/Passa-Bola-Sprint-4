@@ -33,7 +33,7 @@ const AtletaHome = () => {
 
     return(
         <StructurePages>
-            <header className="flex flex-row justify-between items-center px-10 pt-12 mb-12">
+            <header className="flex flex-row justify-between items-center px-10 pt-12 mb-8">
                 <img className="w-[11.5%]" src={treinadora}></img>
                 <FontAwesomeIcon icon={faBell} className="text-2xl text-gray-300"></FontAwesomeIcon>
             </header>
