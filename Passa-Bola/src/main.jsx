@@ -11,7 +11,7 @@ import RFase2 from './pages/recrutador/rec-fase-2.jsx'
 import Rfase3 from './pages/recrutador/rec-fase-3.jsx'
 import AtletaHome from './pages/atleta/AtletaHome.jsx'
 import LolaAi from './pages/atleta/LolaAi.jsx'
-import Calendario from './pages/atleta/calendario.jsx'
+import Calendario from './pages/atleta/Calendario.jsx'
 import RecrutadorHome from './pages/recrutador/RecrutadorHome.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
