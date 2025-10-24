@@ -78,9 +78,9 @@ const Calendario = () => {
                             <p className="text-gray-400 text-sm mt-2">{eventoSelecionado.descrição}</p>
                         </div>
                     ) : diaAtivo ? (
-                        <p className="text-gray-400 mt-6">Nenhum evento neste dia.</p>
+                        <p className="text-gray-400 text-sm mt-10">Nenhum evento neste dia.</p>
                     ) : (
-                        <p className="text-gray-500 mt-6">Clique em um dia para ver os detalhes.</p>
+                        <p className="text-gray-500 text-sm mt-10">Clique em um dia para ver os detalhes.</p>
                     )}
                 </section>
             </main>
