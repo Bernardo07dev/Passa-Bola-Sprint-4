@@ -57,7 +57,7 @@ const LolaAi = () => {
         <p className='text-sm font-light text-gray-300 mt-2'>Pergunta e Converse com a Lola</p>
       </header>
       
-      <main className="flex flex-col px-16 text-white w-full max-w-[500px] h-[calc(100vh-300px)] overflow-y-auto scrollbar-hide">
+      <main className="flex flex-col px-10 text-white w-full max-w-[500px] h-[calc(100vh-300px)] overflow-y-auto scrollbar-hide">
           {messages.map((msg, idx) => (
             <div
               key={idx}
