@@ -12,26 +12,26 @@ const Footer = (props) => {
         <footer className="w-[450px] flex flex-row justify-between items-center px-10 py-3 fixed bottom-0 bg-[#323740]">
             <div className='text-center' onClick={() => {navigate("../AtletaHome")}}>
                 <FontAwesomeIcon  icon={faHouse} className={`text-2xl cursor-pointer ${props.estado === 'home' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
-                <p className={`text-xs font-ligh ${props.estado === 'home' ? 'text-white' : 'text-gray-500'}`}>Home</p>
+                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'home' ? 'text-white' : 'text-gray-500'}`}>Home</p>
             </div>
 
             <div className='text-center' onClick={() => {navigate("../Calendario")}}>
                 <FontAwesomeIcon icon={faCalendar} className={`text-2xl cursor-pointer ${props.estado === 'calendario' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
-                <p className="text-xs font-light text-gray-400 ">Calendário</p>
+                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'calendario' ? 'text-white' : 'text-gray-500'}`}>Calendário</p>
             </div>
                         
             <div onClick={() => {navigate("../LolaAi")}} className={`bg-blue-600 p-4 rounded-full text-center cursor-pointer ${props.estado === 'lola' ? 'animate-pulse' : ''}`}>
                 <FontAwesomeIcon icon={faCertificate} className="text-2xl text-white"></FontAwesomeIcon>
             </div>
 
-            <div className='text-center'>
+            <div className='text-center' onClick={() => {navigate("../Comunidade")}}>
                 <FontAwesomeIcon icon={faUsersViewfinder} className={`text-2xl cursor-pointer  ${props.estado === 'comunidade' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
-                <p className="text-xs font-light text-gray-400 ">Comunidade</p>
+                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'comunidade' ? 'text-white' : 'text-gray-500'}`}>Comunidade</p>
             </div>
 
             <div className='text-center'>
                 <FontAwesomeIcon icon={faUser} className={`text-2xl cursor-pointer ${props.estado === 'usuario' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
-                <p className="text-xs font-light text-gray-400 ">Conta</p>
+                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'usuario' ? 'text-white' : 'text-gray-500'}`}>Conta</p>
             </div>
         </footer>
     )
