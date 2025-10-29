@@ -6,10 +6,7 @@ import player from "../../assets/img/palyer.png";
 import post1 from "../../assets/img/ohio_post.jpg";
 import luiza from "../../assets/img/luiza.png";
 import peneira from "../../assets/img/peneira.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SliderPeneiras from "../../components/SliderPeneiras";
-import { useState, useEffect } from "react";
-import axios from "axios";
 
 const Comunidade = () => {
 
