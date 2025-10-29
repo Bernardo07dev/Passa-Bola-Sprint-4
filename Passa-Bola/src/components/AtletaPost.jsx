@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {useState} from "react";
 
 
-
-
 const AtletaPost = (props) => {
 
     const [like, setLike] = useState(props.like);

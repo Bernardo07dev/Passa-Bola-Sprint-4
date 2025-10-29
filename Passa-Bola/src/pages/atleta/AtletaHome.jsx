@@ -1,15 +1,15 @@
 import StructurePages from "../../components/StructurePages";
 import Footer from "../../components/footer";
-import treinadora from "../../assets/img/treinadora.png";
 import ohio from "../../assets/img/ohio.png";
 import cor from "../../assets/img/cor.jpg";
 import player from "../../assets/img/palyer.png";
 import post1 from "../../assets/img/ohio_post.jpg";
 import peneira from "../../assets/img/peneira.jpg";
 import luiza from "../../assets/img/luiza.png";
-import { faBell, faHeart, faComment, faShare } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {useState} from "react";
+import Header from "../../components/Header";
 
 const AtletaHome = () => {
     const [like, setLike] = useState(5);
@@ -33,14 +33,11 @@ const AtletaHome = () => {
 
     return(
         <StructurePages>
-            <header className="flex flex-row justify-between items-center px-10 pt-12 mb-8">
-                <img className="w-[11.5%]" src={treinadora}></img>
-                <FontAwesomeIcon icon={faBell} className="text-2xl text-gray-300"></FontAwesomeIcon>
-            </header>
+            <Header></Header>
 
             <main className="flex flex-col gap-8 w-full">
                 <section className="px-8">
-                    <h1 className="text-xl font-semibold mb-4">Eventos</h1>
+                    <h1 className="text-xl mb-4">Eventos</h1>
                     <div className="flex flex-row w-full justify-between gap-4">
                         <div className="cursor-pointer">
                             <img className="w-[190px] h-[120px] rounded-xl mb-2" src={ohio}></img>

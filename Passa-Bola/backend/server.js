@@ -5,7 +5,6 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Configuração do CORS para permitir requisições do Vercel
 app.use(cors({
   origin: [
     'https://passa-bola-sprint-4.vercel.app',

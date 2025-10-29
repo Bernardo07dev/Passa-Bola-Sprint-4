@@ -1,10 +1,8 @@
 import StructurePages from "../../components/StructurePages";
 import Footer from "../../components/footer";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import treinadora from "../../assets/img/treinadora.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "../../components/Header";
 
 const Calendario = () => {
     const dias = Array.from({ length: 28 }, (_, i) => i + 1);
@@ -31,10 +29,7 @@ const Calendario = () => {
 
     return (
         <StructurePages>
-            <header className="flex flex-row justify-between items-center px-10 pt-12 mb-8">
-                <img className="w-[11.5%]" src={treinadora} />
-                <FontAwesomeIcon icon={faBell} className="text-2xl text-gray-300" />
-            </header>
+            <Header></Header>
 
             <main className="flex px-10 flex-col w-full">
                 <h1 className="text-xl font-semibold mb-4 mx-2">Calendário</h1>
