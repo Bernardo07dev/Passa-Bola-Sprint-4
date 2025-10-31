@@ -17,7 +17,7 @@ const Comunidade = () => {
             <h1 className="text-xl mb-2 text-left w-full px-10">Oportunidades</h1>
             <SliderPeneiras></SliderPeneiras>
 
-            <h1 className="text-xl mb-6 text-left w-full px-10">Seu Feed</h1>
+            {/* <h1 className="text-xl mb-6 text-left w-full px-10">Seu Feed</h1> */}
             <AtletaPost like={5} perfil={player} post={post1} descricao="Mais uma vitória para o time, obrigado #OhioUneversity pela oportunidade!!"></AtletaPost>
             <AtletaPost like={13} perfil={luiza} post={peneira} descricao="Hoje fiz uma peneira no Corinthians Sport Clube, muito feliz pela oportunidade, obrigado #passabola"></AtletaPost>
 

@@ -14,6 +14,7 @@ import LolaAi from './pages/atleta/LolaAi.jsx'
 import Calendario from './pages/atleta/Calendario.jsx'
 import Comunidade from './pages/atleta/Comunidade.jsx'
 import RecrutadorHome from './pages/recrutador/RecrutadorHome.jsx'
+import Conta from './pages/atleta/Conta.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
   {path: '/LolaAi', element:<LolaAi/>},
   {path: '/Calendario', element:<Calendario />},
   {path: '/Comunidade', element:<Comunidade />},
+  {path: '/Conta', element:<Conta />},
   {path: '/RecrutadorHome', element:<RecrutadorHome />},
 ])
 

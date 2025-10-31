@@ -29,9 +29,9 @@ const Footer = (props) => {
                 <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'comunidade' ? 'text-white' : 'text-gray-500'}`}>Comunidade</p>
             </div>
 
-            <div className='text-center'>
-                <FontAwesomeIcon icon={faUser} className={`text-2xl cursor-pointer ${props.estado === 'usuario' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
-                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'usuario' ? 'text-white' : 'text-gray-500'}`}>Conta</p>
+            <div className='text-center' onClick={() => {navigate("../Conta")}}>
+                <FontAwesomeIcon icon={faUser} className={`text-2xl cursor-pointer ${props.estado === 'conta' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
+                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'conta' ? 'text-white' : 'text-gray-500'}`}>Conta</p>
             </div>
         </footer>
     )
