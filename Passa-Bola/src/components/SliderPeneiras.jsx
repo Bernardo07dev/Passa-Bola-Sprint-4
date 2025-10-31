@@ -28,7 +28,7 @@ const SliderPeneiras = () => {
   };
 
   return (
-    <div className="w-full mx-auto px-4 my-6">
+    <div className="w-[90%] mx-auto px-2 my-6">
       <Slider {...settings}>
         {eventos.map((ev, i) => (
           <div key={i} className="px-4">

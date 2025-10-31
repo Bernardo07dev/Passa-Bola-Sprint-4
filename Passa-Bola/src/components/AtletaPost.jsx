@@ -17,14 +17,14 @@ const AtletaPost = (props) => {
 
     return(
         <section>
-            <div className="flex flex-row gap-4 px-8">
+            <div className="flex flex-row gap-4 px-10">
                 <img className="w-[13%] rounded-full" src={props.perfil}></img>
                 <div className="flex flex-col">
                     <h1 className="text-base">Sofia Bastos</h1>
                     <p className="text-sm text-gray-500">2d</p>
                 </div>
             </div>
-            <p className="font-light text-sm mt-4 px-8 mb-4">{props.descricao}</p>
+            <p className="font-light text-sm mt-4 px-10 mb-4">{props.descricao}</p>
             <img src={props.post} className="w-full h-[300px] object-cover"></img>
             <div className="flex flex-row justify-start gap-4 px-10 py-6">
                 <div className="flex flex-row items-center gap-1">
