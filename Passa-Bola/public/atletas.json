@@ -1,0 +1,92 @@
+[
+  {
+    "nome": "Lara Monteiro",
+    "idade": 20,
+    "sub": "Universitária",
+    "regiao": "Sudeste",
+    "time": "Universidade Federal de Minas Gerais (UFMG)",
+    "descricao": "Meia criativa, destaque pela precisão nos passes e visão de jogo. Foi eleita melhor jogadora do torneio universitário em 2024.",
+    "img": "/lara.jpg"
+  },
+  {
+    "nome": "Beatriz Salles",
+    "idade": 17,
+    "sub": "Sub-18",
+    "regiao": "Sul",
+    "time": "Grêmio Base Feminina",
+    "descricao": "Zagueira firme, conhecida pela liderança em campo e leitura tática. Capitou o time sub-17 no campeonato estadual.",
+    "img": "/beatriz.jpg"
+  },
+  {
+    "nome": "Camila Duarte",
+    "idade": 19,
+    "sub": "Universitária",
+    "regiao": "Nordeste",
+    "time": "Universidade Federal da Bahia (UFBA)",
+    "descricao": "Atacante veloz e com ótimo controle de bola. Artilheira da liga universitária baiana em 2025.",
+    "img": "/camila.jpg"
+  },
+  {
+    "nome": "Isadora Lima",
+    "idade": 16,
+    "sub": "Sub-17",
+    "regiao": "Centro-Oeste",
+    "time": "Goiás Esporte Clube - Base",
+    "descricao": "Lateral direita com boa chegada ao ataque e excelente preparo físico. Promessa das categorias de base do Goiás.",
+    "img": "/isadora.jpg"
+  },
+  {
+    "nome": "Rafaela Campos",
+    "idade": 18,
+    "sub": "Sub-20",
+    "regiao": "Sudeste",
+    "time": "Santos FC - Base Feminina",
+    "descricao": "Volante moderna, combina marcação intensa com passes verticais precisos. Participou da seleção paulista sub-20.",
+    "img": "/rafa.jpg"
+  },
+  {
+    "nome": "Juliana Ferreira",
+    "idade": 21,
+    "sub": "Universitária",
+    "regiao": "Sul",
+    "time": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+    "descricao": "Goleira segura e com ótimo reflexo. Se destaca por comandar a defesa e iniciar jogadas com precisão nos lançamentos.",
+    "img": "/juliana.jpg"
+  },
+  {
+    "nome": "Luana Ribeiro",
+    "idade": 15,
+    "sub": "Sub-16",
+    "regiao": "Nordeste",
+    "time": "Sport Recife Base Feminina",
+    "descricao": "Meia ofensiva talentosa, com dribles rápidos e chute forte. Uma das revelações da base pernambucana.",
+    "img": "/luana.jpg"
+  },
+  {
+    "nome": "Ana Carolina Moura",
+    "idade": 19,
+    "sub": "Universitária",
+    "regiao": "Norte",
+    "time": "Universidade Federal do Pará (UFPA)",
+    "descricao": "Defensora com bom posicionamento e força física. Atua tanto como zagueira quanto lateral esquerda.",
+    "img": "/ana.jpg"
+  },
+  {
+    "nome": "Marina Pacheco",
+    "idade": 17,
+    "sub": "Sub-18",
+    "regiao": "Sudeste",
+    "time": "Corinthians Base Feminina",
+    "descricao": "Centroavante com faro de gol e bom jogo aéreo. Marcou 15 gols na última temporada da base corinthiana.",
+    "img": "/maria.jpg"
+  },
+  {
+    "nome": "Helena Vasconcelos",
+    "idade": 18,
+    "sub": "Sub-20",
+    "regiao": "Nordeste",
+    "time": "Ceará SC Base Feminina",
+    "descricao": "Ponta habilidosa, destaca-se pela velocidade e cruzamentos precisos. Campeã regional sub-20 em 2024.",
+    "img": "/helena.jpg"
+  }
+]
