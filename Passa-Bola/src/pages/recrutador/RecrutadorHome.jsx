@@ -3,11 +3,10 @@ import HeaderRec from "../../components/HeaderRec";
 import CampoSearch from "../../components/CampoSearch";
 import SliderAtletas from "../../components/SliderAtletas";
 import { useState, useEffect } from "react";
+import FooterRec from "../../components/FooterRec"
 import axios from "axios";
 
 const RecrutadorHome = () => {
-
-    const [Search, SetSearch] = useState();
     const [Atletas, SetAtletas] = useState([]);
 
     const AtletasFav = Atletas.filter((atleta) => atleta.favoritada === "true");
@@ -25,8 +24,6 @@ const RecrutadorHome = () => {
         <StructurePages>
             <HeaderRec></HeaderRec>
             <section className="w-full px-8">
-                <h1 className="text-lg px-2 mb-2 text-gray-200">Ache Sua Atleta Aqui:</h1>
-                <CampoSearch type="text" placeholder="Digite o Nome da Atleta:" valor={Search} aoAlterado={(valor) => SetSearch(valor)}></CampoSearch>
                 <p className="text-sm text-gray-400 mx-2">Vistas Recentemente:</p>
                 <SliderAtletas></SliderAtletas>
             </section>
@@ -47,7 +44,7 @@ const RecrutadorHome = () => {
                 ))}
             </section>
 
-            
+            <FooterRec estado="home"></FooterRec>
             
         </StructurePages>
     )

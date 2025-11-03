@@ -16,7 +16,7 @@ const CampoSearch = (props) => {
                 onChange={aoDigitado}
                 type={props.type}
                 placeholder={props.placeholder}
-                className="w-full text-sm bg-[#9586c110] text-white placeholder-gray-400 border border-gray-600 rounded-lg p-4 transition-shadow"
+                className="w-full text-sm bg-[#9586c110] text-gray-400 placeholder-gray-400 rounded-lg p-4 transition-shadow"
             />
         </div>
     );

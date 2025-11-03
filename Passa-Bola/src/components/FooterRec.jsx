@@ -1,26 +1,20 @@
-import { faHouse, faCalendar, faUsersViewfinder, faUser, faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faCalendar, faUsersViewfinder, faUser, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from "react-router-dom";
 
-const Footer = (props) => {
-
+const FooterRec = (props) => {
     const navigate = useNavigate();
 
-
     return(
-        <footer className="w-[450px] flex flex-row justify-between items-center px-10 py-3 fixed bottom-0 bg-[#323740]">
-            <div className='text-center' onClick={() => {navigate("../AtletaHome")}}>
+        <footer className="w-[450px] flex flex-row justify-center items-center gap-14 py-4 pt-5 fixed bottom-0 bg-[#323740]">
+            <div className='text-center' onClick={() => {navigate("../RecrutadorHome")}}>
                 <FontAwesomeIcon  icon={faHouse} className={`text-2xl cursor-pointer ${props.estado === 'home' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
                 <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'home' ? 'text-white' : 'text-gray-500'}`}>Home</p>
             </div>
 
-            <div className='text-center' onClick={() => {navigate("../Calendario")}}>
-                <FontAwesomeIcon icon={faCalendar} className={`text-2xl cursor-pointer ${props.estado === 'calendario' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
-                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'calendario' ? 'text-white' : 'text-gray-500'}`}>Calendário</p>
-            </div>
-                        
-            <div onClick={() => {navigate("../LolaAi")}} className={`bg-blue-600 p-4 rounded-full text-center cursor-pointer ${props.estado === 'lola' ? 'animate-pulse' : ''}`}>
-                <FontAwesomeIcon icon={faCertificate} className="text-2xl text-white"></FontAwesomeIcon>
+            <div className='text-center' onClick={() => {navigate("../rede")}}>
+                <FontAwesomeIcon icon={faEye} className={`text-2xl cursor-pointer ${props.estado === 'rede' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
+                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'rede' ? 'text-white' : 'text-gray-500'}`}>Rede</p>
             </div>
 
             <div className='text-center' onClick={() => {navigate("../Comunidade")}}>
@@ -34,7 +28,6 @@ const Footer = (props) => {
             </div>
         </footer>
     )
-
 }
 
-export default Footer;
+export default FooterRec;
