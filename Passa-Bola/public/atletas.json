@@ -4,9 +4,10 @@
     "idade": 20,
     "sub": "Universitária",
     "regiao": "Sudeste",
-    "time": "Universidade Federal de Minas Gerais (UFMG)",
+    "time": "Universidade de Minas Gerais (UFMG)",
     "descricao": "Meia criativa, destaque pela precisão nos passes e visão de jogo. Foi eleita melhor jogadora do torneio universitário em 2024.",
-    "img": "/lara.jpg"
+    "img": "/lara.jpg",
+    "favoritada":"true"
   },
   {
     "nome": "Beatriz Salles",
@@ -15,7 +16,8 @@
     "regiao": "Sul",
     "time": "Grêmio Base Feminina",
     "descricao": "Zagueira firme, conhecida pela liderança em campo e leitura tática. Capitou o time sub-17 no campeonato estadual.",
-    "img": "/beatriz.jpg"
+    "img": "/beatriz.jpg",
+    "favoritada":"false"
   },
   {
     "nome": "Camila Duarte",
@@ -24,7 +26,8 @@
     "regiao": "Nordeste",
     "time": "Universidade Federal da Bahia (UFBA)",
     "descricao": "Atacante veloz e com ótimo controle de bola. Artilheira da liga universitária baiana em 2025.",
-    "img": "/camila.jpg"
+    "img": "/camila.jpg",
+    "favoritada":"false"
   },
   {
     "nome": "Isadora Lima",
@@ -33,7 +36,8 @@
     "regiao": "Centro-Oeste",
     "time": "Goiás Esporte Clube - Base",
     "descricao": "Lateral direita com boa chegada ao ataque e excelente preparo físico. Promessa das categorias de base do Goiás.",
-    "img": "/isadora.jpg"
+    "img": "/isadora.jpg",
+    "favoritada":"false"
   },
   {
     "nome": "Rafaela Campos",
@@ -42,7 +46,8 @@
     "regiao": "Sudeste",
     "time": "Santos FC - Base Feminina",
     "descricao": "Volante moderna, combina marcação intensa com passes verticais precisos. Participou da seleção paulista sub-20.",
-    "img": "/rafa.jpg"
+    "img": "/rafa.jpg",
+    "favoritada":"true"
   },
   {
     "nome": "Juliana Ferreira",
@@ -51,7 +56,8 @@
     "regiao": "Sul",
     "time": "Universidade Federal do Rio Grande do Sul (UFRGS)",
     "descricao": "Goleira segura e com ótimo reflexo. Se destaca por comandar a defesa e iniciar jogadas com precisão nos lançamentos.",
-    "img": "/juliana.jpg"
+    "img": "/juliana.jpg",
+    "favoritada":"false"
   },
   {
     "nome": "Luana Ribeiro",
@@ -60,7 +66,8 @@
     "regiao": "Nordeste",
     "time": "Sport Recife Base Feminina",
     "descricao": "Meia ofensiva talentosa, com dribles rápidos e chute forte. Uma das revelações da base pernambucana.",
-    "img": "/luana.jpg"
+    "img": "/luana.jpg",
+    "favoritada":"false"
   },
   {
     "nome": "Ana Carolina Moura",
@@ -69,7 +76,8 @@
     "regiao": "Norte",
     "time": "Universidade Federal do Pará (UFPA)",
     "descricao": "Defensora com bom posicionamento e força física. Atua tanto como zagueira quanto lateral esquerda.",
-    "img": "/ana.jpg"
+    "img": "/ana.jpg",
+    "favoritada":"false"
   },
   {
     "nome": "Marina Pacheco",
@@ -78,7 +86,8 @@
     "regiao": "Sudeste",
     "time": "Corinthians Base Feminina",
     "descricao": "Centroavante com faro de gol e bom jogo aéreo. Marcou 15 gols na última temporada da base corinthiana.",
-    "img": "/maria.jpg"
+    "img": "/maria.jpg",
+    "favoritada":"false"
   },
   {
     "nome": "Helena Vasconcelos",
@@ -87,6 +96,7 @@
     "regiao": "Nordeste",
     "time": "Ceará SC Base Feminina",
     "descricao": "Ponta habilidosa, destaca-se pela velocidade e cruzamentos precisos. Campeã regional sub-20 em 2024.",
-    "img": "/helena.jpg"
+    "img": "/helena.jpg",
+    "favoritada":"false"
   }
 ]
