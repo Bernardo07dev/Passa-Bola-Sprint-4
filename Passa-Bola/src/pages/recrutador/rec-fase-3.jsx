@@ -9,7 +9,7 @@ const RFase3 = () => {
     const navigate = useNavigate()
 
     const aoSubmit = () => {
-        navigate("/recrutador-home")
+        navigate("/RecrutadorHome")
     }
 
     return(
