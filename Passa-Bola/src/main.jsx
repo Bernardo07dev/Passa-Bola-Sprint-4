@@ -16,6 +16,8 @@ import Comunidade from './pages/atleta/Comunidade.jsx'
 import RecrutadorHome from './pages/recrutador/RecrutadorHome.jsx'
 import Conta from './pages/atleta/Conta.jsx'
 import Rede from './pages/recrutador/Rede.jsx'
+import Mensagens from './pages/recrutador/Mensagens.jsx'
+import ContaRec from './pages/recrutador/ContaRec.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -34,6 +36,8 @@ const router = createBrowserRouter([
   {path: '/Conta', element:<Conta />},
   {path: '/RecrutadorHome', element:<RecrutadorHome />},
   {path: '/Rede', element:<Rede />},
+  {path: '/Mensagens', element:<Mensagens />},
+  {path: '/ContaRec', element:<ContaRec />}
 ])
 
 createRoot(document.getElementById('root')).render(

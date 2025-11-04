@@ -38,7 +38,7 @@ const Rede = () => {
                 {AtletaDouble.map((dupla, index) => (
                 <div key={index} className="flex flex-row gap-4 mb-4">
                     {dupla.map((atleta, i) => (
-                    <div key={i} className="bg-[#191B22] rounded-lg flex flex-col gap-4 items-center">
+                    <div key={i} className="bg-[#191B22] w-[50%] rounded-lg flex flex-col gap-4 items-center">
                         <div className="w-full">
                             <img className="rounded-lg" src={atleta.img}/>
                         </div>

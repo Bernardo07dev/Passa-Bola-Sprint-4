@@ -1,4 +1,4 @@
-import { faHouse, faCalendar, faUsersViewfinder, faUser, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faUser, faComment, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from "react-router-dom";
 
@@ -17,12 +17,12 @@ const FooterRec = (props) => {
                 <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'rede' ? 'text-white' : 'text-gray-500'}`}>Rede</p>
             </div>
 
-            <div className='text-center' onClick={() => {navigate("../Comunidade")}}>
-                <FontAwesomeIcon icon={faUsersViewfinder} className={`text-2xl cursor-pointer  ${props.estado === 'comunidade' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
-                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'comunidade' ? 'text-white' : 'text-gray-500'}`}>Comunidade</p>
+            <div className='text-center' onClick={() => {navigate("../Mensagens")}}>
+                <FontAwesomeIcon icon={faComment} className={`text-2xl cursor-pointer  ${props.estado === 'mensagens' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
+                <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'mensagens' ? 'text-white' : 'text-gray-500'}`}>Mensagens</p>
             </div>
 
-            <div className='text-center' onClick={() => {navigate("../Conta")}}>
+            <div className='text-center' onClick={() => {navigate("../ContaRec")}}>
                 <FontAwesomeIcon icon={faUser} className={`text-2xl cursor-pointer ${props.estado === 'conta' ? 'text-white' : 'text-gray-500'}`}></FontAwesomeIcon>
                 <p className={`text-xs font-ligh cursor-pointer ${props.estado === 'conta' ? 'text-white' : 'text-gray-500'}`}>Conta</p>
             </div>
