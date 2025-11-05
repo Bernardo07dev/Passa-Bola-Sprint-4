@@ -1,4 +1,4 @@
-Para ver a documentação completa da API, clique [aqui](README_API_ENDPOINTS.md).
+Para ver a documentação completa da API entre em README_API_ENDPOINTS.md.
 
 # 🏀 Passa Bola - Sprint 4
 
