@@ -61,17 +61,12 @@ A plataforma utiliza **Groq API** integrada ao modelo **LLaMA 3** para oferecer 
    ```bash
    npm install
    ```
-4. Crie um arquivo `.env` na raiz do projeto e adicione sua chave da API do Groq:
-
-   ```env
-   VITE_GROQ_API_KEY=sua_chave_aqui
-   ```
-5. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
 
    ```bash
    npm run dev
    ```
-6. Acesse no navegador:
+5. Acesse no navegador:
 
    ```
    http://localhost:5173
