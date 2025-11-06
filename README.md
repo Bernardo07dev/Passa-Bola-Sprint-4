@@ -77,7 +77,8 @@ A plataforma utiliza **Groq API** integrada ao modelo **LLaMA 3** para oferecer 
 ## 🌐 Deploy
 
 O projeto está hospedado na Vercel e pode ser acessado em:
-👉 **[https://passa-bola-sprint-4.vercel.app/AtletaHome](https://passa-bola-sprint-4.vercel.app/AtletaHome)**
+👉 **[https://passa-bola-sprint-4.vercel.app/AtletaHome](https://passa-bola-sprint-4.vercel.app
+)**
 
 ---
 
