@@ -2,9 +2,12 @@ import Structure from "../../components/Structure";
 import NumFase from "../../components/NumFase/NumFase";
 import CampoTexto from "../../components/CampoTexto";
 import CampoFile from "../../components/CampoFile";
+import {useNavigate} from "react-router-dom"
 
 
 const Fase3 = () => {
+    const navigate = useNavigate();
+
     return(
         <Structure>
             <div className="w-full grid justify-items-center mt-12 pb-8">
@@ -18,7 +21,7 @@ const Fase3 = () => {
                 <CampoTexto label="Nome da sua escola/colégio atual" placeholder="Ex: Senai"></CampoTexto>
                 <CampoTexto label="Em que ano você se forma no Ensino Médio?" placeholder="Ex: 2025"></CampoTexto>
                 <CampoTexto label="Qual área você gostaria de estudar na faculdade?" placeholder="Ex: Educação Física, Engenharia, Fisioterapia"></CampoTexto>
-                <button className="w-full py-3 mt-8 bg-blue-500 text-white rounded-md font-medium flex items-center justify-center gap-2">Ir Para Home</button>
+                <button onClick={e => navigate('/AtletaHome')} className="w-full py-3 mt-8 bg-blue-500 text-white rounded-md font-medium flex items-center justify-center gap-2">Ir Para Home</button>
             </div>
         </Structure>
     )
