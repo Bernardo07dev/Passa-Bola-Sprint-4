@@ -13,7 +13,7 @@ https://passa-bola-sprint-4.onrender.com
 
 ### GET /
 
-**Descrição:** Endpoint de teste para verificar se o backend está rodando.
+**Descrição:** Endpoint de teste para verificar se o backend está funcionando
 
 **URL:** GET /
 
