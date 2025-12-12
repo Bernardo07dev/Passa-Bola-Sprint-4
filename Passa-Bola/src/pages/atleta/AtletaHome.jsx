@@ -46,14 +46,14 @@ const AtletaHome = () => {
                         </div>
                         <div className="cursor-pointer">
                             <img className="w-[190px] h-[120px] rounded-xl mb-2" src={cor}></img>
-                            <p className="text-sm">Peneira Corinthians</p>
+                            <p className="text-sm">Peneira Sport Clube Corinthians</p>
                             <p className="text-gray-500 text-sm">14:45 - 25/09/2025</p>
                         </div>
                     </div>
                 </section>
 
                 <section className="px-8">
-                    <h1 className="text-xl mb-4">Status Recentes</h1>
+                    <h1 className="text-xl mb-4">Status Recente</h1>
                     <div className="w-full flex flex-row gap-4">
                         <div className="w-[50%] p-4 border border-gray-700 rounded-xl">
                             <h1 className="text-sm">Gols 23/24</h1>
