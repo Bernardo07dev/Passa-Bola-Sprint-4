@@ -53,7 +53,7 @@ const AtletaHome = () => {
                 </section>
 
                 <section className="px-8">
-                    <h1 className="text-xl mb-4">Status Recentes</h1>
+                    <h1 className="text-xl mb-4">Status Recente</h1>
                     <div className="w-full flex flex-row gap-4">
                         <div className="w-[50%] p-4 border border-gray-700 rounded-xl">
                             <h1 className="text-sm">Gols 23/24</h1>
