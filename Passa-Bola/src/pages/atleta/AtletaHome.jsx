@@ -46,7 +46,7 @@ const AtletaHome = () => {
                         </div>
                         <div className="cursor-pointer">
                             <img className="w-[190px] h-[120px] rounded-xl mb-2" src={cor}></img>
-                            <p className="text-sm">Peneira Corinthians</p>
+                            <p className="text-sm">Peneira Sport Clube Corinthians</p>
                             <p className="text-gray-500 text-sm">14:45 - 25/09/2025</p>
                         </div>
                     </div>
