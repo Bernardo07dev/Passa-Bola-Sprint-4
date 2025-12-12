@@ -56,7 +56,7 @@ const AtletaHome = () => {
                     <h1 className="text-xl mb-4">Status Recentes</h1>
                     <div className="w-full flex flex-row gap-4">
                         <div className="w-[50%] p-4 border border-gray-700 rounded-xl">
-                            <h1 className="text-sm">Gols</h1>
+                            <h1 className="text-sm">Gols 23/24</h1>
                             <p className="text-2xl font-semibold">1</p>
                         </div>
                         <div className="w-[50%] p-4 border border-gray-700 rounded-xl">
